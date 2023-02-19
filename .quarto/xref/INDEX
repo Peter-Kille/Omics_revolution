@@ -1,0 +1,35 @@
+{
+  "about.qmd": {
+    "about.html": "c95f5791"
+  },
+  "Functional_Interpretation.qmd": {
+    "Functional_Interpretation.html": "4232a1a4"
+  },
+  "index.qmd": {
+    "index.html": "a2aa3a73"
+  },
+  "Lungs_and_particles.qmd": {
+    "Lungs_and_particles.html": "fa3b062c"
+  },
+  "Lung_model.qmd": {
+    "Lung_model.html": "614f6d4d"
+  },
+  "Microbiome.qmd": {
+    "Microbiome.html": "6d0d7e83"
+  },
+  "NCBI_GEO.qmd": {
+    "NCBI_GEO.html": "e789ac40"
+  },
+  "the_CF_lung.qmd": {
+    "the_CF_lung.html": "a5ff9898"
+  },
+  "Transcriptomics_an_introduction.qmd": {
+    "Transcriptomics_an_introduction.html": "57028687"
+  },
+  "Virial_Genomics.qmd": {
+    "Virial_Genomics.html": "b4ec7be5"
+  },
+  "Viral_Genomics.qmd": {
+    "Viral_Genomics.html": "b1bdffff"
+  }
+}

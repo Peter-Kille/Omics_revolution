@@ -1,0 +1,15 @@
+---
+title-block-style: default
+title-block-banner: darkred
+title: "Introduction to the Lung"
+subtitle: "Lung is introduced as a subject for Omics analysis"
+author: "Dr Renarata Jurkoski"
+date: today
+affiliation: "Cardiff University"
+---
+
+# Introduction to the Lung
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c8b7d43-e641-46f0-ae10-af290136c4d3&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay">
+
+</iframe>

@@ -1,0 +1,20 @@
+---
+title-block-style: default
+title-block-banner: darkred
+title: "The Omics Revolution"
+subtitle: "Harnessing global analyses"
+author: "Professor Tomasz Jurkoski"
+description: "Course Introduction."
+date: today
+affiliation: "Cardiff University"
+---
+
+# Omics Revolution Module description
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=77f7d2ab-0f0f-433e-94cc-af29015707f5&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+# Omics Technologies
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=00d08eb1-b552-4fe6-a67b-af2d00f81634&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9383cf93-8803-4917-89a1-af2e009519cc&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>

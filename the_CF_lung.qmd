@@ -1,0 +1,13 @@
+---
+title-block-style: default
+title-block-banner: darkred
+title: "The Microbiome of the CF Lung"
+subtitle: "Insights into respiratory desease"
+author: "Professor Eshwar Mahenthiralingam"
+date: today
+affiliation: "Cardiff University"
+---
+
+# The Microbiome of the CF Lung
+
+<iframe  data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5a930a09-97f2-44e7-a216-af40015a0e89&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>

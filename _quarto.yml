@@ -1,0 +1,34 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: "Omics an Introduction"
+        contents:
+          - index.qmd
+          - Lung_model.qmd
+      - section: "Viral Genomics"
+        contents:
+          - Viral_Genomics.qmd
+      - section: "Microbiome Analysis"
+        contents:
+          - the_CF_lung.qmd
+          - Microbiome.qmd
+      - section: "Transcriptomics"
+        contents:
+          - Lungs_and_particles.qmd
+          - Transcriptomics_an_introduction.qmd
+          - NCBI_GEO.qmd
+          - Functional_Interpretation.qmd
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+

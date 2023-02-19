@@ -1,0 +1,18 @@
+---
+title-block-style: default
+title-block-banner: darkred
+title: "Transcriptomics"
+subtitle: "Global profiling to single cells"
+author: "Professor Peter Kille"
+description: "Course Introduction."
+date: today
+affiliation: "Cardiff University"
+---
+
+# Transcripomics An Introduction
+
+<iframe data-external="1"  src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=39c3f123-51ac-4eba-9963-af55008ae317&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>
+
+# Lung Transcriptomics - from tissue to single cells
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=994f86f4-bcc7-46e2-a761-af5100a58c35&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay"></iframe>

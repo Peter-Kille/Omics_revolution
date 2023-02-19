@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Profs Tom Connor and Peter Kille">
+<meta name="dcterms.date" content="2023-02-19">
+
+<title>Viral Phylogenomics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background: darkred;
+    }
+    </style>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Viral Phylogenomics</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title d-none d-lg-block">Viral Phylogenomics</h1>
+            <p class="subtitle lead">Profling a Pandemic</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Profs Tom Connor and Peter Kille </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 19, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Omics an Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">The Omics Revolution</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lung_model.html" class="sidebar-item-text sidebar-link">Introduction to the Lung</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Viral Genomics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Viral_Genomics.html" class="sidebar-item-text sidebar-link active">Viral Phylogenomics</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Microbiome Analysis</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./the_CF_lung.html" class="sidebar-item-text sidebar-link">The Microbiome of the CF Lung</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Microbiome.html" class="sidebar-item-text sidebar-link">Microbiome Data in QIIME</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Transcriptomics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Lungs_and_particles.html" class="sidebar-item-text sidebar-link">Lungs and Particles</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Transcriptomics_an_introduction.html" class="sidebar-item-text sidebar-link">Transcriptomics</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./NCBI_GEO.html" class="sidebar-item-text sidebar-link">Re-analysis of Published Data</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Functional_Interpretation.html" class="sidebar-item-text sidebar-link">Functional Interpretation of transcritomic data</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#viral-sequencing-and-analysis" id="toc-viral-sequencing-and-analysis" class="nav-link active" data-scroll-target="#viral-sequencing-and-analysis">Viral Sequencing and analysis</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#viral-sequencing" id="toc-viral-sequencing" class="nav-link" data-scroll-target="#viral-sequencing">Viral sequencing</a></li>
+  <li><a href="#raw-data-sequence-analysis-qc" id="toc-raw-data-sequence-analysis-qc" class="nav-link" data-scroll-target="#raw-data-sequence-analysis-qc">Raw Data Sequence Analysis QC</a></li>
+  </ul></li>
+  <li><a href="#analysis-workflow-of-raw-sequencing-data" id="toc-analysis-workflow-of-raw-sequencing-data" class="nav-link" data-scroll-target="#analysis-workflow-of-raw-sequencing-data">Analysis Workflow of Raw Sequencing Data</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a>
+  <ul class="collapse">
+  <li><a href="#cov2019-artic-nextflow-workflow" id="toc-cov2019-artic-nextflow-workflow" class="nav-link" data-scroll-target="#cov2019-artic-nextflow-workflow">cov2019 Artic Nextflow Workflow</a></li>
+  <li><a href="#genome-visualisation-software---igb" id="toc-genome-visualisation-software---igb" class="nav-link" data-scroll-target="#genome-visualisation-software---igb">Genome Visualisation Software - IGB</a></li>
+  </ul></li>
+  <li><a href="#workshop-exercise" id="toc-workshop-exercise" class="nav-link" data-scroll-target="#workshop-exercise">Workshop exercise</a>
+  <ul class="collapse">
+  <li><a href="#review-the-qc-summary-and-qc-plot" id="toc-review-the-qc-summary-and-qc-plot" class="nav-link" data-scroll-target="#review-the-qc-summary-and-qc-plot">1. Review the QC summary and QC Plot</a></li>
+  <li><a href="#review-and-overlay-the-reference-genome-fasta-annotation-gff-and-primer-trimmed-alignment-file-bam" id="toc-review-and-overlay-the-reference-genome-fasta-annotation-gff-and-primer-trimmed-alignment-file-bam" class="nav-link" data-scroll-target="#review-and-overlay-the-reference-genome-fasta-annotation-gff-and-primer-trimmed-alignment-file-bam">2. Review and Overlay the reference genome (FASTA), annotation (GFF) and primer trimmed alignment file (bam)</a></li>
+  <li><a href="#explore-the-varient-amino-acids-encoded-by-the-sequence-this-file-can-be-opened-in-excel" id="toc-explore-the-varient-amino-acids-encoded-by-the-sequence-this-file-can-be-opened-in-excel" class="nav-link" data-scroll-target="#explore-the-varient-amino-acids-encoded-by-the-sequence-this-file-can-be-opened-in-excel">Explore the Varient amino acids encoded by the sequence (this file can be opened in Excel)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#phylogenetic-classification-of-concensus-viral-sequnece" id="toc-phylogenetic-classification-of-concensus-viral-sequnece" class="nav-link" data-scroll-target="#phylogenetic-classification-of-concensus-viral-sequnece">Phylogenetic Classification of Concensus Viral Sequnece</a>
+  <ul class="collapse">
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#software-1" id="toc-software-1" class="nav-link" data-scroll-target="#software-1">Software</a></li>
+  <li><a href="#workshop-exercise-1" id="toc-workshop-exercise-1" class="nav-link" data-scroll-target="#workshop-exercise-1">Workshop exercise</a></li>
+  </ul></li>
+  <li><a href="#structural-and-varient-analysis" id="toc-structural-and-varient-analysis" class="nav-link" data-scroll-target="#structural-and-varient-analysis">Structural and Varient analysis</a>
+  <ul class="collapse">
+  <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data</a></li>
+  <li><a href="#software-2" id="toc-software-2" class="nav-link" data-scroll-target="#software-2">Software</a></li>
+  <li><a href="#workshop-exercise-2" id="toc-workshop-exercise-2" class="nav-link" data-scroll-target="#workshop-exercise-2">Workshop exercise</a></li>
+  </ul></li>
+  <li><a href="#viral-databases-and-resources" id="toc-viral-databases-and-resources" class="nav-link" data-scroll-target="#viral-databases-and-resources">Viral Databases and resources</a>
+  <ul class="collapse">
+  <li><a href="#sequencing-approaches" id="toc-sequencing-approaches" class="nav-link" data-scroll-target="#sequencing-approaches">Sequencing approaches</a></li>
+  <li><a href="#analytical-tools" id="toc-analytical-tools" class="nav-link" data-scroll-target="#analytical-tools">Analytical tools</a></li>
+  <li><a href="#data-portals" id="toc-data-portals" class="nav-link" data-scroll-target="#data-portals">Data portals</a></li>
+  <li><a href="#lineage-comparison-data-bases" id="toc-lineage-comparison-data-bases" class="nav-link" data-scroll-target="#lineage-comparison-data-bases">Lineage comparison Data bases</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ea6dc880-93a8-4f6e-9aa1-af2d00c6064c&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a9ac7c64-e72a-4a08-b3e1-af3800d6b17b&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<section id="viral-sequencing-and-analysis" class="level1">
+<h1>Viral Sequencing and analysis</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The pandemic lineage evolution in a short video <a href="https://nextstrain.org/ncov/gisaid/global/6m?branchLabel=emerging_lineage">nextclade</a></p>
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=04f5593b-fe6e-4eb7-a69a-af3700e1e41e&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+<p>video “https://cardiff.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=04f5593b-fe6e-4eb7-a69a-af3700e1e41e”</p>
+<p>The derivation and viral lineages has played an essential part in our understanding and fight against the pandemic. The tutorial will take you through the steps where-by viral sequence is derived and analysed.</p>
+<p><a href="https://gisaid.org/">GISAID</a> provides a range of resources to explore lineage prevalence and mutation comparison between lineages.</p>
+<p>Here’s some key analyses it provides using the lineage sequence data:</p>
+<p>Lineage Distribution (Omicron):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Omicron_lineage_report.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Omicron Sequence distribution</figcaption><p></p>
+</figure>
+</div>
+<p>Lineage distribution Location in UK</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/UK_location_report.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Lineage location / distribution in UK</figcaption><p></p>
+</figure>
+</div>
+<p>Mutation frequency across lineages</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Mutations_accross_lineage.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Mutation frequency across lineages</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="viral-sequencing" class="level2">
+<h2 class="anchored" data-anchor-id="viral-sequencing">Viral sequencing</h2>
+<p>There a range of methods for deriving viral sequences from biological material. The basic steps are:</p>
+<ol type="1">
+<li>Sample acquisition - saliva or Nasal swabs</li>
+<li>Nucleic acid extraction (RNA or DNA depending on virus)</li>
+<li>Reverse transcription (for RNA viruses)</li>
+<li>Viral enrichment (introduction of specimen specific indexes if multiplexing)</li>
+<li>Library constriction (introduction of specimen specific indexes if multiplexing)</li>
+<li>Sequencing (Illumina and Nanopore)</li>
+</ol>
+<p><strong>Steps 4 and 5 can be reversed if using capture enrichment approaches</strong></p>
+<p><strong>Indexes can be introduced in steps 3 OR 4 but not both</strong></p>
+<p>A good review of these methods is provided by <a href="https://doi.org/10.1186/s12864-020-07283-6">Gohl et al 2020</a> and is summarized in Figure 1. Also see <a href="https://doi.org/10.1038/s41598-022-06091-0">Rosenthal et al., 2022</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Gohl_et_al_2020_Fig1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Sequencing Workflows: Gohl et al 2020 Fig 1</figcaption><p></p>
+</figure>
+</div>
+<p>The approach that most used is what has been named the <a href="https://artic.network/ncov-2019">ARTIC protocol</a>. This approach used 76 primer pairs to amplify the viral genome 2 sets of overlapping amplification reactions each containing 38 primer sets generating amplicons of ~400 bp. These amplicons were then pooled and sequenced (Illumina or Nanopore) to generate the complete genome.</p>
+</section>
+<section id="raw-data-sequence-analysis-qc" class="level2">
+<h2 class="anchored" data-anchor-id="raw-data-sequence-analysis-qc">Raw Data Sequence Analysis QC</h2>
+<ol type="1">
+<li>Quality assess and quality trim sequences</li>
+<li>Align sequences to reference covid genome (throw-away sequences that do not align)</li>
+<li>Evaluate coverage</li>
+<li>Mask primers used for amplification</li>
+<li>Derive consensus</li>
+<li>Determine Variants</li>
+</ol>
+<p>Now some hands on data analysis, So lets do some analysis !!</p>
+</section>
+</section>
+<section id="analysis-workflow-of-raw-sequencing-data" class="level1">
+<h1>Analysis Workflow of Raw Sequencing Data</h1>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>For the element of the workshop we have used Viral re-sequencing data generated using the ARTIC-V3 protocol from the <a href="https://www.covid19dataportal.org/">COVID-19 Data Portal - EMBL</a>. The following illumia paired end data was downloaded:</p>
+<pre><code>SRR13018901_1.fastq.gz  SRR13635734_2.fastq.gz  SRR15359995_1.fastq.gz  SRR15360031_2.fastq.gz  SRR15910995_1.fastq.gz  SRR16192823_2.fastq.gz
+SRR13018901_2.fastq.gz  SRR13635763_1.fastq.gz  SRR15359995_2.fastq.gz  SRR15365583_1.fastq.gz  SRR15910995_2.fastq.gz
+SRR13635734_1.fastq.gz  SRR13635763_2.fastq.gz  SRR15360031_1.fastq.gz  SRR15365583_2.fastq.gz  SRR16192823_1.fastq.gz</code></pre>
+<p>Note: We are using ‘pair end data’ some there is 2 sequences for each sample representing the forward and reverse samples.</p>
+<p>Reference Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1 complete genome sequence (fasta) and annotation (gff) was downloaded from NCBI nucleotide database (https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3). (&gt;send to &gt; Complete Record &gt; file &gt; (FASTA/GFF3))</p>
+<pre><code>MN908947.3.fasta
+MN908947.3.gff</code></pre>
+</section>
+<section id="software" class="level2">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<section id="cov2019-artic-nextflow-workflow" class="level3">
+<h3 class="anchored" data-anchor-id="cov2019-artic-nextflow-workflow">cov2019 Artic Nextflow Workflow</h3>
+<p>Primary analysis work flow was performed using <a href="https://github.com/connor-lab/">cov2019-artic-nf</a> pipeline. This analysis was performed using a High Performance Linux (Ubuntu 20.04) Workstation (24 threads and 64 Gb RAM) running nexflow (https://www.nextflow.io/) and singularity (https://github.com/sylabs/singularity). command used to perform the analysis:</p>
+<pre><code>nextflow run connor-lab/ncov2019-artic-nf \ #analsyis pipline
+        -profile singularity \              #platform for software
+        --illumina \                        #data type
+        --outdir $PWD/artic_analysis \      #output folder
+        --prefix "artic_test_run_221022" \  #output prefix
+        --directory $PWD/fastq_files/       #location of input files
+        --bed ~/covid_processing/artic_config_files/artic_V3.bed \     #primer sequences in bed format
+        --ref ~/covid_processing/nimagen_conf_files/MN908947.3.fasta \ #template sequence 
+        --gff ~/covid_processing/nimagen_conf_files/MN908947.3.gff \   #template annotation
+        --yaml ~/covid_processing/nimagen_conf_files/SARS-CoV-2.types.yaml #covid classification file</code></pre>
+<p><strong>YOU WILL NOT BE ABLE TO PERFORM THIS ANALYSIS, YOU WILL BE PROVIDED WITH THE OUTPUT OF THE PIPELINE WHICH CONTAINS THE FOLLOWING FOLDERS.</strong></p>
+<pre><code>artic_analysis/
+├── artic_test_run_221022.qc.csv
+├── artic_test_run_221022.typing_summary.csv
+├── artic_test_run_221022.variant_summary.csv
+├── ncovIllumina_Genotyping_typeVariants
+├── ncovIllumina_sequenceAnalysis_callVariants
+├── ncovIllumina_sequenceAnalysis_makeConsensus
+├── ncovIllumina_sequenceAnalysis_readMapping
+├── ncovIllumina_sequenceAnalysis_readTrimming
+├── ncovIllumina_sequenceAnalysis_trimPrimerSequences
+├── qc_pass_climb_upload
+└── qc_plots</code></pre>
+</section>
+<section id="genome-visualisation-software---igb" class="level3">
+<h3 class="anchored" data-anchor-id="genome-visualisation-software---igb">Genome Visualisation Software - IGB</h3>
+<p>We will visualize the primary outputs using <a href="https://bioviz.org/">Integrated Genome Browser</a> this can be downloaded and install on all platforms. It is also available as part of the BIOSI School software tools on the teaching workstation.</p>
+</section>
+</section>
+<section id="workshop-exercise" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-exercise">Workshop exercise</h2>
+<section id="review-the-qc-summary-and-qc-plot" class="level3">
+<h3 class="anchored" data-anchor-id="review-the-qc-summary-and-qc-plot">1. Review the QC summary and QC Plot</h3>
+<p>QC summary (this can be opened by opening <code>artic_test_run_221022.qc.csv</code> into excel)</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>sample_name</th>
+<th>pct_N_bases</th>
+<th>pct_covered_bases</th>
+<th>longest_no_N_run</th>
+<th>num_aligned_reads</th>
+<th>fasta</th>
+<th>bam</th>
+<th>qc_pass</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SRR13018901</td>
+<td>18.63</td>
+<td>81.37</td>
+<td>3133</td>
+<td>492459</td>
+<td>SRR13018901.primertrimmed.consensus.fa</td>
+<td>SRR13018901.mapped.primertrimmed.sorted.bam</td>
+<td>TRUE</td>
+</tr>
+</tbody>
+</table>
+<p>Now review the linked QC plot that can be found in _analysis_plots</p>
+<p><img src="C:/Users/smbpk/Cardiff%20University/Omics%20revolution%20course%20-%20Viral%20Genomics/artic_analysis/qc_plots/SRR13018901.depth.png" class="img-fluid" style="width:50.0%" alt="Sequence QC Plot"> Derive what the QC parameters are that would influence viral analsyis</p>
+</section>
+<section id="review-and-overlay-the-reference-genome-fasta-annotation-gff-and-primer-trimmed-alignment-file-bam" class="level3">
+<h3 class="anchored" data-anchor-id="review-and-overlay-the-reference-genome-fasta-annotation-gff-and-primer-trimmed-alignment-file-bam">2. Review and Overlay the reference genome (FASTA), annotation (GFF) and primer trimmed alignment file (bam)</h3>
+<p>Preview the fasta file and gff file using a text editor (wordpad / textpad on PC or Textedit on Mac). You cannot preview the bam file as it is a compressed binary file and is not human readable.</p>
+<p>file locations:</p>
+<pre><code>Omics revolution course - Viral Genomics\Reference_files\MN908947.3.fasta
+Omics revolution course - Viral Genomics\Reference_files\MN908947.3.gff
+Omics revolution course - Viral\ Genomics\artic_analysis\ncovIllumina_sequenceAnalysis_trimPrimerSequences\SRR13018901.mapped.primertrimmed.sorted.bam</code></pre>
+<p>Fasta Preview (<a href="https://www.ncbi.nlm.nih.gov/genbank/fastaformat/">fasta format guide</a>)</p>
+<pre><code>&gt;MN908947.3 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome
+ATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAA
+CGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAAC
+TAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTG
+.....</code></pre>
+<p>GFF preview (<a href="https://www.ensembl.org/info/website/upload/gff3.html">GFF3 format guide</a>)</p>
+<pre><code>##gff-version 3
+##sequence-region   MN908947.3 1 29903
+#!genome-build ENA ASM985889v3
+#!genome-version ASM985889v3
+#!genome-date 2020-01
+#!genome-build-accession NCBI:GCA_009858895.3
+MN908947.3      ASM985889v3     region  1       29903   .       .       .       ID=region:MN908947.3;Alias=NC_045512.2,NC_045512v2
+####
+MN908947.3      ensembl gene    266     13483   .       +       .       ID=gene:ENSSASG00005000003;Name=ORF1ab;biotype=protein_coding;description=ORF1a polyprotein%3BORF1ab polyprotein [Source:NCBI gene (formerly Entrezgene)%3BAcc:43740578];gene_id=ENSSASG00005000003;logic_name=ensembl_covid;version=1
+MN908947.3      ensembl mRNA    266     13483   .       +       .       ID=transcript:ENSSAST00005000003;Parent=gene:ENSSASG00005000003;Name=ORF1a;biotype=protein_coding;transcript_id=ENSSAST00005000003;version=1
+MN908947.3      ensembl exon    266     13483   .       +       .       Parent=transcript:ENSSAST00005000003;Name=ENSSASE00005000003;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=ENSSASE00005000003;rank=1;version=1
+....</code></pre>
+<p>Now overlay these features using Integrated Genome Browser using the following steps:</p>
+<ul>
+<li>Open IGB</li>
+</ul>
+<p><img src="images/IGB_opening.png" class="img-fluid" style="width:50.0%" alt="IGB Openign Screen"> * Open the fasta sequence as a genome</p>
+<p><img src="images/Open_fasta_as_genome.png" class="img-fluid" alt="Open Fasta as Genome"> Remember to ’Load Genome when are back on main screen</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Load_sequence.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Load Sequence</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Add and load gff</li>
+</ul>
+<p>open gff <code>&gt; File &gt; Open File &gt; [Select gff from file browser]</code></p>
+<p>Load data</p>
+<p><img src="images/Load_data.png" class="img-fluid" alt="Load Sequence"> You should now see a preview of the annotated genome looking something like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Gff_preview.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Load gff</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Add mapped primertrimmed sorted bam</li>
+</ul>
+<p>File location:</p>
+<pre><code>Omics revolution course - Viral\ Genomics\artic_analysis\ncovIllumina_sequenceAnalysis_trimPrimerSequences\SRR13018901.mapped.primertrimmed.sorted.bam</code></pre>
+<p>open bam <code>&gt; File &gt; Open File &gt; [Select bam from file browser]</code></p>
+<p>Now load data as you did previously.</p>
+<p>You should now see a preview of the annotated genome with bam overlay looking something like this (it may take time to appear):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Bam_preview.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Load gff</figcaption><p></p>
+</figure>
+</div>
+<p>use slider and top to zoom in to see the primer masking and SNPs:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Bam_Zoom.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Load BAM</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li>Explore settings on IGB to visualize the primer sites and mutations - identify synonymous and non-synonymous mutations</li>
+</ul>
+</section>
+<section id="explore-the-varient-amino-acids-encoded-by-the-sequence-this-file-can-be-opened-in-excel" class="level3">
+<h3 class="anchored" data-anchor-id="explore-the-varient-amino-acids-encoded-by-the-sequence-this-file-can-be-opened-in-excel">Explore the Varient amino acids encoded by the sequence (this file can be opened in Excel)</h3>
+<p><code>Omics revolution course - Viral Genomics\artic_analysis\artic_test_run_221022.variant_summary.csv</code></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>sampleID</th>
+<th>gene</th>
+<th>aa_var</th>
+<th>dna_var</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SRR13018901</td>
+<td>ORF1ab</td>
+<td>Syn.924F</td>
+<td>C3037T</td>
+</tr>
+<tr class="even">
+<td>SRR13018901</td>
+<td>ORF1ab</td>
+<td>Syn.1749N</td>
+<td>C5512T</td>
+</tr>
+<tr class="odd">
+<td>SRR13018901</td>
+<td>S</td>
+<td>Syn.53D</td>
+<td>C21721T</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="phylogenetic-classification-of-concensus-viral-sequnece" class="level1">
+<h1>Phylogenetic Classification of Concensus Viral Sequnece</h1>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+<p>Data was download from <a href="https://gisaid.org/">GISAID</a> representing viral sequences from across (time and space) of the pandemic.</p>
+<p>These sequences can be found in: <code>Omics revolution course - Viral Genomics\Viral_sequences\SARAS-CoV-2</code></p>
+<pre><code>EPI_ISL_14569384.fasta
+EPI_ISL_14871243.fasta
+EPI_ISL_15038461.fasta
+EPI_ISL_15165123.fasta
+EPI_ISL_15196344.fasta
+EPI_ISL_15233297.fasta
+EPI_ISL_15251359.fasta
+EPI_ISL_15266729.fasta
+EPI_ISL_15266749.fasta
+EPI_ISL_15283205.fasta
+EPI_ISL_15395946.fasta
+EPI_ISL_15400456.fasta
+EPI_ISL_15422334.fasta
+EPI_ISL_15424763.fasta
+EPI_ISL_15426260.fasta
+EPI_ISL_15436037.fasta
+EPI_ISL_15458335.fasta
+EPI_ISL_15463432.fasta
+EPI_ISL_15466700.fasta
+EPI_ISL_402128.fasta
+EPI_ISL_529216.fasta</code></pre>
+</section>
+<section id="software-1" class="level2">
+<h2 class="anchored" data-anchor-id="software-1">Software</h2>
+<p>Nextclade is a tool that identifies differences between your sequences and a reference sequence, uses these differences to assign your sequences to clades, and reports potential sequence quality issues in your data. You can use the tool to analyze sequences before you upload them to a database, or if you want to assign Nextstrain clades to a set of sequences.</p>
+<p>To analyze your data, drag a fasta file onto the upload box or paste sequences into the text box. These sequences will then be analyzed in your browser - data never leave your computer. Since your computer is doing the work rather than a server, it is advisable to analyze at most a few hundred sequences at a time.</p>
+<p>The source code for the application and algorithms is opensource and is available on GitHub. User manual is available at docs.nextstrain.org/projects/nextclade.</p>
+<p><a href="https://clades.nextstrain.org/">Nextclade</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Nextclade_open.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Nextflow Opening page</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="workshop-exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-exercise-1">Workshop exercise</h2>
+<ul>
+<li><ol type="1">
+<li>Load run sequence analysis</li>
+</ol></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Drag_in_fasta.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Drag in fasta</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Nextclade_run.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Nexclade run</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><ol start="2" type="1">
+<li>Review the Results</li>
+</ol></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Nextclade_result.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Nexclade results</figcaption><p></p>
+</figure>
+</div>
+<p>Click / hover over the element of the analysis to see more detail</p>
+<p><img src="images/Nextclade_qc.png" class="img-fluid" alt="Nexclade QC"> <img src="images/Nextclade_varients.png" class="img-fluid" alt="Nexclade Varients"> <img src="images/Nextclade_ins.png" class="img-fluid" alt="Nexclade Insertions"></p>
+<p><img src="images/Nextclade_del.png" class="img-fluid" alt="Nexclade deletions/gaps"> * 3. Review the position fall on the phylogenetic tree</p>
+<p>Click on the tree icon at the top right of the screen</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Nextclade_Tree.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Nexclade tree</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><ol start="4" type="1">
+<li>Download and review results</li>
+</ol></li>
+</ul>
+<p>Click on the download icon at the top right of the screen</p>
+<p><img src="images/Nextclade_download.png" class="img-fluid" alt="Nexclade download icon"> I suggest using nextclade.tsv and opening file in excel.</p>
+<ul>
+<li><ol start="5" type="1">
+<li>Now repeat the analysis with other sequences provided</li>
+</ol></li>
+<li><ol start="6" type="1">
+<li>Can you determine where and when each sequence was derived from ?</li>
+</ol></li>
+</ul>
+</section>
+</section>
+<section id="structural-and-varient-analysis" class="level1">
+<h1>Structural and Varient analysis</h1>
+<section id="data-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-2">Data</h2>
+<p>Data was download from <a href="https://gisaid.org/">GISAID</a> representing viral sequences from across (time and space) of the pandemic.</p>
+<p>These sequences can be found in: <code>Omics revolution course - Viral Genomics\Viral_sequences\SARAS-CoV-2</code></p>
+</section>
+<section id="software-2" class="level2">
+<h2 class="anchored" data-anchor-id="software-2">Software</h2>
+<p><a href="https://gisaid.org/database-features/covsurver-mutations-app/">GISAID Covsurver</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Covsurver_open.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">CoVsurver Open</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="workshop-exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-exercise-2">Workshop exercise</h2>
+<ul>
+<li><ol type="1">
+<li>Upload and analysis sequences provide</li>
+</ol></li>
+</ul>
+<p>You should see the following outputs - discuss how this help in fighting the pandemic ?</p>
+<p><img src="images/Covsurver_spike3D.png" class="img-fluid" alt="CoVsurver 3d"> <img src="images/Covsurver_varients.png" class="img-fluid" alt="CoVsurver Varients"></p>
+<p>Covsurver_varients</p>
+</section>
+</section>
+<section id="viral-databases-and-resources" class="level1">
+<h1>Viral Databases and resources</h1>
+<section id="sequencing-approaches" class="level2">
+<h2 class="anchored" data-anchor-id="sequencing-approaches">Sequencing approaches</h2>
+<ul>
+<li><a href="https://artic.network/ncov-2019">Artic Network</a></li>
+</ul>
+</section>
+<section id="analytical-tools" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-tools">Analytical tools</h2>
+<ul>
+<li><a href="https://clades.nextstrain.org/">Nextclade</a></li>
+<li><a href="https://gisaid.org/database-features/covsurver-mutations-app/">GISAID Covsurver</a></li>
+</ul>
+</section>
+<section id="data-portals" class="level2">
+<h2 class="anchored" data-anchor-id="data-portals">Data portals</h2>
+<ul>
+<li><a href="https://www.covid19dataportal.org/">COVID-19 Data Portal - EMBL</a></li>
+<li><a href="https://www.ncbi.nlm.nih.gov/labs/virus/">NCBI Viral Dash board</a></li>
+<li><a href="https://gisaid.org/">GISAID</a></li>
+<li><a href="https://nextstrain.org/">NextStrain</a></li>
+</ul>
+</section>
+<section id="lineage-comparison-data-bases" class="level2">
+<h2 class="anchored" data-anchor-id="lineage-comparison-data-bases">Lineage comparison Data bases</h2>
+<ul>
+<li><a href="https://gisaid.org/lineage-comparison/">Outbreak</a></li>
+</ul>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p><a href="https://doi.org/10.1186/s12864-020-07283-6">Gohl, D.M., Garbe, J., Grady, P. et al.&nbsp;A rapid, cost-effective tailed amplicon method for sequencing SARS-CoV-2. BMC Genomics 21, 863 (2020).</a></p>
+<p><a href="https://www.nature.com/articles/s41598-022-06091-0">Rosenthal, S.H., Gerasimova, A., Ruiz-Vega, R. et al.&nbsp;Development and validation of a high throughput SARS-CoV-2 whole genome sequencing workflow in a clinical laboratory. Sci Rep 12, 2054 (2022). https://doi.org/10.1038/s41598-022-06091-0</a></p>
+<iframe data-external="1" src="https://cardiff.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5952eccf-19f1-4610-93ba-af3900e83f1a&amp;autoplay=false&amp;offerviewer=true&amp;showtitle=true&amp;showbrand=true&amp;captions=false&amp;interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay">
+</iframe>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

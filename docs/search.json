@@ -1,0 +1,338 @@
+[
+  {
+    "objectID": "Functional_Interpretation.html#gprofiler-panopto",
+    "href": "Functional_Interpretation.html#gprofiler-panopto",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "gprofiler panopto",
+    "text": "gprofiler panopto"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#gene-enrichment-analysis-with-david",
+    "href": "Functional_Interpretation.html#gene-enrichment-analysis-with-david",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "Gene Enrichment Analysis with David",
+    "text": "Gene Enrichment Analysis with David\n[David - Database for Annotation, Visualization and Integrated Discovery] (https://david.ncifcrf.gov/) was the tool to use for gene enrichment from 2005 - 2016 but the database it hosted became out of date due to a break in the research groups funding. From 2016 (gprofiler)[https://biit.cs.ut.ee/gprofiler/gost] and (stringdb)[https://string-db.org/] have been prefered because they have been kept upto date. However, DAVID was refunded and a 2021 update means it is back to being maintained. Although there will not be time to explore it in our workshop the following workshop and video is there to support anyone wanting to explore its functionality."
+  },
+  {
+    "objectID": "Functional_Interpretation.html#start-analysis-and-upload-you-data",
+    "href": "Functional_Interpretation.html#start-analysis-and-upload-you-data",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "1. Start analysis and upload you data",
+    "text": "1. Start analysis and upload you data\nSelect < start analysis >\nPaste in you gene list (1) in box (A) and, select identifier (2), and identify as a Gene List (3). Select your species (2a) . In more nuanced analysis you may wish to define your own background - this is useful when working with non-model organisms or if your starting population does not represent the entire genome.\n DAVID Upload\nnow select < Submit List >"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#generate-functional-analysis-of-gene-list",
+    "href": "Functional_Interpretation.html#generate-functional-analysis-of-gene-list",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "2. Generate Functional Analysis of gene list",
+    "text": "2. Generate Functional Analysis of gene list\nIf you have used a non-regulate gene identifier or it does not recognize the identifier type you have used it may ask you to convert the identifiers - check the programs suggestion - it is usually good but you should check.\nSelect < Functional Annotation Tool >\nYou will now be give a annotation summary as shown below:\n Annotation Summary\nYou will see a range of categories for which the functional annotation has been performed. The analysis told has not only cross referenced the gene list against a range of functional databases it has also analysed the gene co-appearance in citations (Literature), links to disease (Disease) and Interactions agonist other linkages."
+  },
+  {
+    "objectID": "Functional_Interpretation.html#review-gene-ontology-enrichment",
+    "href": "Functional_Interpretation.html#review-gene-ontology-enrichment",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "3. Review Gene Ontology Enrichment",
+    "text": "3. Review Gene Ontology Enrichment\nLet us consider the functional enrichment using (Gene Ontology)[http://geneontology.org/]. Gene Ontology categorizes gene products using three distinct characteristics - Molecular Function (biochemistry of the product), Cellular Component (where it appears in the cell), and the Biological Processes - see more about these classification by reviewing the (Gene Ontology Overview documentation)[http://geneontology.org/docs/ontology-documentation/]. Although ontologies are hierarchical, they are not a simple classification system, they not only allow for gene products to be involved with multiple processes the relationship between elements in the hierarchy are closely defined. The ontology also allows for classification to be as specific or detailed as knowledge allows ie if a protein is a transporter but what it transports is not known it will be defined by a mid-level term ‘transporter’ but if it is known to transport Zn it will be classified at a ‘Zinc transport’ as well as a ‘transporter’. Enrichment analysis uses fisher exact test (see about) to calculate the enrichment at each of these ‘levels’ - although I usually choose to look at the integrated data summarized under the ‘GOTERM_[BP/CC/MF]_DIRECT’.\nclick on the + next too the < Gene_Ontology > category\nSelect < Chart > right of the GOTERM_BP_DIRECT\n BP Enrichment\nNote the P-value and benjamini correct p-value displaying the like hood that those specific Go terms are represented by random - i.e. lost the P-value the less likely the representation of the term is a random select , therefore the more likely the term is enriched.\nTo see the list of gene involved in for instance ‘positive regulation of osteoblast differentiation’ click on the blue bar under the ‘Genes’ column.\nThis is the list you will see:\n positive regulation of osteoblast differentiation\nNow review enrichment for Cell Component and Molecular Function."
+  },
+  {
+    "objectID": "Functional_Interpretation.html#pathway-analysis",
+    "href": "Functional_Interpretation.html#pathway-analysis",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "4. Pathway analysis",
+    "text": "4. Pathway analysis\nclick on the + next too the < Pathways > category\n Pathway Options\nSelect < Chart > right of the KEGG\n KEGG Enrichment\nYou will see a list of enriched pathways - Note the P-value and benjamini correct p-value displaying the like hood that those specific pathways are represented by random - i.e. lost the P-value the less likely the representation of the pathway is a random select, therefore the more likely the pathways is enriched.\nclick on the < TNF Signalling Pathway >_ in the term column\nThis will display the pathway with the terms that are present in the list shown with red stars or highlight by redtext below the figure.\n TNF Signalling Pathway\nExplore some more pathways"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#functional-annotation-clustering",
+    "href": "Functional_Interpretation.html#functional-annotation-clustering",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "5. Functional Annotation Clustering",
+    "text": "5. Functional Annotation Clustering\nDAVID attempts to summarise enrichment between categorization systems using a tool it terms - Functional annotation clustering. If you select this for you current data set. you will be provided with the following clusters:\n Functional Annotation Clustering\nEach cluster is assigned an enrichment score under which ‘terms’ that are enriched under different classification systems are displayed grouped together. Each ‘grouping’ is given a ‘Enrichment Score’ the larger the enrichment score the higher the score the more likely that cluster is being enriched. Note that the is a ‘Classification Stringency’ pull down menu that allows you to define the strength of associated of the term being grouped together.\nFor annotation Cluster 6 (which contains lots of Metallothionein/cadimum associated terms) there is a small green and black box - after the Enrichment Score and the ‘G’ - click on this box. This brings up a cluster matrix showing the gene gene products on the Y-axis and the classification ‘vlasses’ on the X-axis.\n Cluster Matrix\nDavid Workshop\n\nEnrichment with David Panopto"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#string-panopto",
+    "href": "Functional_Interpretation.html#string-panopto",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "STRING Panopto",
+    "text": "STRING Panopto"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#export-go-terms-and-p-values",
+    "href": "Functional_Interpretation.html#export-go-terms-and-p-values",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "1. Export GO terms and P-values",
+    "text": "1. Export GO terms and P-values\n\n1A. gprofiler\nUnder the detailed results menu there is a CSV icon which when clicked can be used to export your enriched terms as a CSV which can then be imported into excel. You can use the associated setting button (the cog symbol next toi the CSV) to select only GO terms to export for this exercise.\n gprofiler export\nYou will then need to copy column C and D into Revigo\n\n\n1B. DAVID\nAfter you have completed the functional analysis select < Gene_ontology > GOTERM_BP_DIRECT > Chart >\nnow Select < Download File >\n DAVID Go Download\nThis will either display the enrichment table into the browser window or ask for a save location depending on your browser settings. If you are not asked for a save location right hand click the displayed table and select Save as and save to a appropriate location as a text file. This text file can be opened/imported into excel. You will file the GO term is concatenated with the GO description in Column B. To split this insert a blank column after column B, then select column B and select menu option < Data > Test to columns >. Select < Delimited > Next >_ and use the radio button to select other and add a ~_ to the box directly to the right of this option. Now click < Next and Finish >. You will see the GO term in now in Column B and the P-value in column F. Select these columns and paste them into Revigo.\nYou should now repeat this process for Molecular Function and Cell Component Terms.When all the data is merged you can paste the GO term and P value into Revigo."
+  },
+  {
+    "objectID": "Functional_Interpretation.html#revigo-data-entry",
+    "href": "Functional_Interpretation.html#revigo-data-entry",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "2. Revigo data entry",
+    "text": "2. Revigo data entry\nEnter GO terms and P-values into Revigo - they should be in format\nTerm    PValue\nGO:0045892  7.75E-06\nGO:0006694  3.29E-04\nLeave the default settings and select < Start Revigo >"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#review-revigo-results",
+    "href": "Functional_Interpretation.html#review-revigo-results",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "3. Review Revigo Results",
+    "text": "3. Review Revigo Results\nFor each GO term category Revigo will generate a Scatterplot, Table, 3D scatter plot, interactive Graph and Tree Map. Note: at the bottom of each plot there are export options for R and other formats _.\nThe most intuitive format is are the Tree Maps (see below) whilst the Scatterplot output table, which include terms like ‘Frequency and Uniqueness’ can be used to create networks in Cytoscape.\n Revigo BP TreeMap"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#revigo-workshop",
+    "href": "Functional_Interpretation.html#revigo-workshop",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "Revigo Workshop",
+    "text": "Revigo Workshop"
+  },
+  {
+    "objectID": "Functional_Interpretation.html#revigo-panopto",
+    "href": "Functional_Interpretation.html#revigo-panopto",
+    "title": "Functional Interpretation of transcritomic data",
+    "section": "Revigo Panopto",
+    "text": "Revigo Panopto"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Omics Revolution",
+    "section": "",
+    "text": "Omics Revolution Module description\n\n\n\n\nOmics Technologies"
+  },
+  {
+    "objectID": "Lungs_and_particles.html",
+    "href": "Lungs_and_particles.html",
+    "title": "Lungs and Particles",
+    "section": "",
+    "text": "Lungs and Particles - Sorry not avalible"
+  },
+  {
+    "objectID": "Lung_model.html",
+    "href": "Lung_model.html",
+    "title": "Introduction to the Lung",
+    "section": "",
+    "text": "Introduction to the Lung"
+  },
+  {
+    "objectID": "Microbiome.html#the-study-system",
+    "href": "Microbiome.html#the-study-system",
+    "title": "Microbiome Data in QIIME",
+    "section": "The study system",
+    "text": "The study system\nThe data you will be using comes from a landmark study on the human microbiome (Caporaso et al., 2011. Genome Biol. 12(5):R50. doi: 10.1186/gb-2011-12-5-r50.). It followed two individuals over time, sampling the microbiota present on four body sites: each hand, the gut and the tongue.\nYou will see the letters EMP crop up repeatedly throughout the tutorial. This stands for Earth Microbiome Project (https://earthmicrobiome.org/), which this data comes from. The EMP was set up in 2010 with the modest (!) aim of sequencing the microbiome of everything. It produced a large number of valuable datasets, but even more usefully it produced a set of standard protocols which are still used in producing microbiome data. QIIME includes a number of options specifically for handling data produced using EMP methods (it helps that the people who wrote QIIME were also behind the EMP).\nOf particular note is the EMP primer set, 515F-806R. Also known as the Caporaso primers after the first author of the paper that described them, they have been tweaked over the years but remain the most commonly-used primer set for microbial community sequencing. Mention “515-806” to a microbial ecologist and they will nod sagely."
+  },
+  {
+    "objectID": "Microbiome.html#metadata",
+    "href": "Microbiome.html#metadata",
+    "title": "Microbiome Data in QIIME",
+    "section": "Metadata",
+    "text": "Metadata\nYou will see a file called metadata.txt. Metadata is ‘data about the data’ and usually includes information on what each sample is, when and where it was collected, what index tag was assigned to it, and anything else you need to know to make sense of it. QIIME requires its metadata to follow a particular format and this file has been formatted to conform to that."
+  },
+  {
+    "objectID": "Microbiome.html#sequences",
+    "href": "Microbiome.html#sequences",
+    "title": "Microbiome Data in QIIME",
+    "section": "Sequences",
+    "text": "Sequences\nThe input data was contained in a folder called emp-single-end-sequences. This contains two FASTQ files - sequences.fastq.gz has the sequence reads in it, and barcodes.fastq.gz has the barcodes (index tags) needed for demultiplexing. This is a giveaway that this data was produced quite some time ago! These days it would be extremely rare to get sequence data that hadn’t already been demultiplexed by the provider.\nNotice that the files end with the extension .gz. This indicates that they have been gzipped: compressed to take up less space. If you try to read a gzipped file with less, head, etc., you will just see gobbledegook, but many bioinformatics programmes are capable of reading in gzipped files directly. Most real-life FASTQ files spend most of their time gzipped, simply to make them manageable."
+  },
+  {
+    "objectID": "Microbiome.html#importing-data-in-qiime",
+    "href": "Microbiome.html#importing-data-in-qiime",
+    "title": "Microbiome Data in QIIME",
+    "section": "Importing data in QIIME",
+    "text": "Importing data in QIIME\nQIIME handles data by importing it into its own file format, called a QIIME artefact. This contains not only the data itself but a record of all the processes that it has gone through.\nThe first step in the analysis is to read the data in.\nYou will see that the import command below has backslashes at the end of each line. This isn’t specific to QIIME, but a universal way to break up a complex command into multiple lines so that it’s easier to read. In Linux, a backslash is called an escape character; it means “interpret the next character literally”. Normally pressing enter at the end of a command tells the computer to run that command. Typing a backslash before pressing enter tells the computer that you literally just want a line break.\nLet’s explore the parts of the command\nqiime tools import is the QIIME programme to be used\ntype `EMPSingleEndSequences tells QIIME the format the sequences will be in\ninput-path emp-single-end-sequences gives the name of the directory the sequence files are in\noutput-path emp-single-end-sequences.qza gives the name of the artefact file to be created. Note the file extension: .qza\nqiime tools import \\\n  --type EMPSingleEndSequences \\\n  --input-path emp-single-end-sequences \\\n  --output-path emp-single-end-sequences.qza\nDemultiplexing\nAs mentioned above, this step would normally be done automatically be the sequencing centre. However, there are still occasions when it needs to be done manually.\nThis command takes the QIIME artefact we have just created and uses the barcode information to decide which sample each sequence belongs to. It creates another QIIME artefact containing the demultiplexed samples.\nqiime demux emp-single \\\n  --i-seqs emp-single-end-sequences.qza \\\n  --m-barcodes-file sample-metadata.tsv \\\n  --m-barcodes-column barcode-sequence \\\n  --o-per-sample-sequences demux.qza \\\n  --o-error-correction-details demux-details.qza\nWe can then ask QIIME to produce some summary statistics. The output here is a .qzv: this is a QIIME visualisation file. Download a qzv and then drag and drop it into view.qiime2.org/\nqiime demux summarize \\\n  --i-data demux.qza \\\n  --o-visualization demux.qzv\nHave a look at the qzv file. What does it tell you about the data?"
+  },
+  {
+    "objectID": "Microbiome.html#quality-filtering-and-counting",
+    "href": "Microbiome.html#quality-filtering-and-counting",
+    "title": "Microbiome Data in QIIME",
+    "section": "Quality filtering and counting",
+    "text": "Quality filtering and counting\nThe next step in the process does two things at once. Firstly, it quality checks the data. It removes any PhiX reads leftover from the sequencing, checks for low quality reads, and removes chimeras (hybrid reads created when two PCR products get erroneously stuck together). Secondly, it counts how many times each unique sequence (ASV) occurs in each sample.\nQIIME offers a few different pipelines for this step, but we are going to use one called DADA2. This is the most computationally intensive step, so be prepared for it to take up to 10 minutes to complete.\nHave a look at the help page for this command at https://docs.qiime2.org/2022.8/plugins/available/dada2/denoise-single/\nWhat are the p-trim-left and p-trunc-len options doing? Would there be a better way to have dealt with this problem in the data? HINT: it would need to be done before reading into QIIME!\nqiime dada2 denoise-single \\\n  --i-demultiplexed-seqs demux.qza \\\n  --p-trim-left 0 \\\n  --p-trunc-len 120 \\\n  --o-representative-sequences rep-seqs.qza \\\n  --o-table table.qza \\\n  --o-denoising-stats stats.qza\nThis command produces three outputs. One is the table (how many reads per ASV per sample). Another is the representative sequences: for each ASV, it marries up the identifier with the actual sequence. Finally, there are some stats on the process.\nHaving produced our outputs, we can run some summaries to see how it’s gone.\nqiime feature-table summarize \\\n  --i-table table.qza \\\n  --o-visualization table.qzv \\\n  --m-sample-metadata-file sample-metadata.tsv\n\nqiime feature-table tabulate-seqs \\\n  --i-data rep-seqs.qza \\\n  --o-visualization rep-seqs.qzv\nLook at these qzv files. What information does each give you?"
+  },
+  {
+    "objectID": "Microbiome.html#taxonomy-assignment",
+    "href": "Microbiome.html#taxonomy-assignment",
+    "title": "Microbiome Data in QIIME",
+    "section": "Taxonomy assignment",
+    "text": "Taxonomy assignment\nHaving counted the number of times each sequence occurs in each sample, we really want to know what organism that sequence came from. QIIME uses a machine learning tool (a Naive Bayes classifier, if you’re into that kind of thing) to assign a taxonomic identity to each sequence. The classifier is trained by giving it a database of sequences of known identity. This approach is endlessly flexible, as you can train the classifier to any type of sequence you are interested in. However, we will be using a pre-trained classifier as our data relates to a commonly-used 16S rRNA region. This classifier has been trained on the Silva database of 16S rRNA genes, focussing in just on the 515-806 region targeted by our primers.\nqiime feature-classifier classify-sklearn \\\n  --i-classifier silva-138-99-515-806-nb-classifier.qza\\\n  --i-reads rep-seqs.qza \\\n  --o-classification taxonomy.qza\n\nqiime metadata tabulate \\\n  --m-input-file taxonomy.qza \\\n  --o-visualization taxonomy.qzv"
+  },
+  {
+    "objectID": "Microbiome.html#barplots",
+    "href": "Microbiome.html#barplots",
+    "title": "Microbiome Data in QIIME",
+    "section": "Barplots",
+    "text": "Barplots\nNow we can get QIIME to make its famous barplots! You will see these in many, many microbiome papers.\nqiime taxa barplot \\\n  --i-table table.qza \\\n  --i-taxonomy taxonomy.qza \\\n  --m-metadata-file sample-metadata.tsv \\\n  --o-visualization taxa-bar-plots.qzv\nDownload the qzv and have a play with the options!"
+  },
+  {
+    "objectID": "Microbiome.html#diversity-exploration",
+    "href": "Microbiome.html#diversity-exploration",
+    "title": "Microbiome Data in QIIME",
+    "section": "Diversity exploration",
+    "text": "Diversity exploration\nQIIME will also compute a lot of other statistics on your data. I personally prefer to do this in R, but for the sake of completeness let’s also look at the QIIME output (I admit, some of it is quite pretty).\nqiime diversity core-metrics \\\n  --i-table table.qza \\\n  --p-sampling-depth 1103 \\\n  --m-metadata-file sample-metadata.tsv \\\n  --output-dir core-metrics-results\n  \nqiime emperor plot \\\n  --i-pcoa core-metrics-results/bray_curtis_pcoa_results.qza \\\n  --m-metadata-file sample-metadata.tsv \\\n  --p-custom-axes days-since-experiment-start \\\n  --o-visualization core-metrics-results/bray-curtis-emperor-days-since-experiment-start.qzv\nLook at the three ‘emporor’ qzvs. What can you conclude about the samples? What are the most important determinants of microbial community composition?"
+  },
+  {
+    "objectID": "Microbiome.html#references",
+    "href": "Microbiome.html#references",
+    "title": "Microbiome Data in QIIME",
+    "section": "References",
+    "text": "References\nBokulich NA, Kaehler BD, Rideout JR, et al. Optimizing taxonomic classification of marker‐gene amplicon sequences with QIIME 2’s q2‐feature‐classifier plug. Microbiome. 2018a;6:90\nBolyen E, Rideout JR, Dillon MR, et al. 2019. Reproducible, interactive, scalable and extensible microbiome data science using QIIME 2. Nature Biotechnology 37: 852–857. https://doi.org/10.1038/s41587-019-0209-9\nCallahan BJ, McMurdie PJ, Rosen MJ, et al. DADA2: high‐resolution sample inference from Illumina amplicon data. Nature Methods 2016;13:581‐583.\nCaporaso JG, Lauber CL, Costello EK, Berg-Lyons D, Gonzalez A, Stombaugh J, Knights D, Gajer P, Ravel J, Fierer N, Gordon JI, Knight R. Moving pictures of the human microbiome. Genome Biology 2011;12(5):R50. doi: 10.1186/gb-2011-12-5-r50. PMID: 21624126; PMCID: PMC3271711.\nCaporaso, J. G., Lauber, C. L., Walters, W. A., Berg-Lyons, D., Lozupone, C. A., Turnbaugh, P. J., Noah Fierer, N., & Knight, R. (2011). Global patterns of 16S rRNA diversity at a depth of millions of sequences per sample. Proceedings of the Natural Academy of Sciences USA 108, 4516–4522. http://doi.org/10.1073/pnas.1000080107\nCaporaso, J. G., Lauber, C. L., Walters, W. A., Berg-Lyons, D., Huntley, J., Fierer, N., Owens, S. M., Betley, J., Fraser, L., Bauer, M., Gormley, N., Gilbert, J. A., Smith, G., & Knight, R. (2012). Ultra-high-throughput microbial community analysis on the Illumina HiSeq and MiSeq platforms. ISME Journal 6, 1621–1624. http://doi.org/10.1038/ismej.2012.8"
+  },
+  {
+    "objectID": "NCBI_GEO.html",
+    "href": "NCBI_GEO.html",
+    "title": "Re-analysis of Published Data",
+    "section": "",
+    "text": "Converting RNASeq data into gene counts is the first-step prior to analysis of the biological function and networks revealed through the subsequent transcription analysis. This process is outside the scope of this workshop but if you are interested Andres et al 2013 Provides an excellent overview of the processes involved.\n Figure 1. Process overview"
+  },
+  {
+    "objectID": "NCBI_GEO.html#false-discover-rate",
+    "href": "NCBI_GEO.html#false-discover-rate",
+    "title": "Re-analysis of Published Data",
+    "section": "False Discover Rate",
+    "text": "False Discover Rate"
+  },
+  {
+    "objectID": "NCBI_GEO.html#fishers-exact-test-and-enrichment-analysis",
+    "href": "NCBI_GEO.html#fishers-exact-test-and-enrichment-analysis",
+    "title": "Re-analysis of Published Data",
+    "section": "Fisher’s Exact Test and Enrichment Analysis",
+    "text": "Fisher’s Exact Test and Enrichment Analysis"
+  },
+  {
+    "objectID": "NCBI_GEO.html#geo-workshop",
+    "href": "NCBI_GEO.html#geo-workshop",
+    "title": "Re-analysis of Published Data",
+    "section": "Geo Workshop",
+    "text": "Geo Workshop\n\nSearch for you dataset\n\nGo to Geo DataSets: (https://www.ncbi.nlm.nih.gov/gds/)[https://www.ncbi.nlm.nih.gov/gds/]\n GEO_DataSet Search\nnow select \n\nRefine search to only show ‘DataSets’ and ‘Series’\n\nSelect < DataSets and Series > from the left hand menu.\n Refine to DataSets\n3A. Select procesed dataset (should be number 3 in list and have a heat map icon to the right)\nClick on title < Endothelial cell response to ultrafine particles > to select DataSet\n Entry Page\nTake notes off all pertinent information about the experiment, including species and what microarray platform was used. In this case experiment was conducted on rats and analysed on an Affymetrix Human Genome U133 Plus 2.0 Array. Download any publication available. Also, if you are interested you could have a look at the cluster analysis on the right hand site. This will show you how the relationship of the expression profiles from each sample relative to each other. If the experiment was successful, all samples of a certain treatment should cluster together.\n4A. Compare experiment samples\nClick <Compare 2 sets of sample>\nChoose <test e.g. One-tailed t-test (A > B)>\nChoose _ e.g. 0.001\nClick on: Step 2: Select which Samples to put in Group A and Group B\n Select Groups to compare\nChoose < Query Group A vs B >\nYou should now see a list of the following DEGS\n DEG List\n5A. Download DEGs\nYou have >100 DEGs but the page only displays the first 20. Before downloading DEGS change the items per page from 20 to 500.\n Items Per Page\nSelect < Download profile data >\nand you will be prompted to save the profiling of the DEGs displayed as default file name <profile_data.txt>\nSave to appropriate location. If needed Select Page 2…. of the DEGS and repeat the download process.\nRepeat this process for <test e.g. One-tailed t-test (B > A) significance level 0.001 >_\n6A. Open and Merge DEG lists in Excel\nThe DEG lists show the gene list with there relative expression level (normalised) and annotation for the genes involved (annotation shown in columns BG ->). For Our next steps we will use the Gene symbol that is in Column BH.\n3B. Select un-processed series (should be number 2 - it will have icon < Analyze with GEO2R > at the end of the entry)\nClick on < Analyze with GEO2R >\nNow Define groups by click clicking the < Define Group pull > down and create groups ‘control’ and ‘Treatment’ (enter group name and press enter). Click on each sample in list and associated it with one of your group (you can hold ctrl down to select multiple entry before associating them with the group).\n Select Groups to compare\n4B. Customise the Option and Analyse\nSelect < Options > and customise as shown below:\n Geo2R Options\nSelect < reanalyze >\nWill will now see a Processing icon - this may take a minute or two.\n5B. DEGs\nYou will now see a table and a series of Visualisations - review the visualisation taking note of what each are showing you.\n Geo2R results\nVenn diagram showing GSE4567: Limma, Padj<0.05 - 704 genes - this is the set we will use\nClick on < Explore and download, control vs treatment and Download Significant genes >\nThis will give you a Tsv you can open in excel\n6B DEG TSV\nOpen the DEG TSV - you will have ID (Affymetrix), Gene Symbol, Description and Log2(fold Change) and Adjusted p-value. The Gene.symbol can have multiple symonyms for each gene - this can bias future analsyis. Copy/paste gene symbol column to rught hand column (so no other data is on right), and use < Data > Text to Columns > Delimited > Other > ‘/’ > Finish >_ to push secondary symbols into other columns."
+  },
+  {
+    "objectID": "NCBI_GEO.html#geo-database-panopto",
+    "href": "NCBI_GEO.html#geo-database-panopto",
+    "title": "Re-analysis of Published Data",
+    "section": "GEO Database Panopto",
+    "text": "GEO Database Panopto"
+  },
+  {
+    "objectID": "the_CF_lung.html",
+    "href": "the_CF_lung.html",
+    "title": "The Microbiome of the CF Lung",
+    "section": "",
+    "text": "The Microbiome of the CF Lung"
+  },
+  {
+    "objectID": "Transcriptomics_an_introduction.html",
+    "href": "Transcriptomics_an_introduction.html",
+    "title": "Transcriptomics",
+    "section": "",
+    "text": "Transcripomics An Introduction\n\n\n\n\nLung Transcriptomics - from tissue to single cells"
+  },
+  {
+    "objectID": "Viral_Genomics.html#introduction",
+    "href": "Viral_Genomics.html#introduction",
+    "title": "Viral Phylogenomics",
+    "section": "Introduction",
+    "text": "Introduction\nThe pandemic lineage evolution in a short video nextclade\n\n\nvideo “https://cardiff.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=04f5593b-fe6e-4eb7-a69a-af3700e1e41e”\nThe derivation and viral lineages has played an essential part in our understanding and fight against the pandemic. The tutorial will take you through the steps where-by viral sequence is derived and analysed.\nGISAID provides a range of resources to explore lineage prevalence and mutation comparison between lineages.\nHere’s some key analyses it provides using the lineage sequence data:\nLineage Distribution (Omicron):\n\n\n\nOmicron Sequence distribution\n\n\nLineage distribution Location in UK\n\n\n\nLineage location / distribution in UK\n\n\nMutation frequency across lineages\n\n\n\nMutation frequency across lineages"
+  },
+  {
+    "objectID": "Viral_Genomics.html#viral-sequencing",
+    "href": "Viral_Genomics.html#viral-sequencing",
+    "title": "Viral Phylogenomics",
+    "section": "Viral sequencing",
+    "text": "Viral sequencing\nThere a range of methods for deriving viral sequences from biological material. The basic steps are:\n\nSample acquisition - saliva or Nasal swabs\nNucleic acid extraction (RNA or DNA depending on virus)\nReverse transcription (for RNA viruses)\nViral enrichment (introduction of specimen specific indexes if multiplexing)\nLibrary constriction (introduction of specimen specific indexes if multiplexing)\nSequencing (Illumina and Nanopore)\n\nSteps 4 and 5 can be reversed if using capture enrichment approaches\nIndexes can be introduced in steps 3 OR 4 but not both\nA good review of these methods is provided by Gohl et al 2020 and is summarized in Figure 1. Also see Rosenthal et al., 2022.\n\n\n\nSequencing Workflows: Gohl et al 2020 Fig 1\n\n\nThe approach that most used is what has been named the ARTIC protocol. This approach used 76 primer pairs to amplify the viral genome 2 sets of overlapping amplification reactions each containing 38 primer sets generating amplicons of ~400 bp. These amplicons were then pooled and sequenced (Illumina or Nanopore) to generate the complete genome."
+  },
+  {
+    "objectID": "Viral_Genomics.html#raw-data-sequence-analysis-qc",
+    "href": "Viral_Genomics.html#raw-data-sequence-analysis-qc",
+    "title": "Viral Phylogenomics",
+    "section": "Raw Data Sequence Analysis QC",
+    "text": "Raw Data Sequence Analysis QC\n\nQuality assess and quality trim sequences\nAlign sequences to reference covid genome (throw-away sequences that do not align)\nEvaluate coverage\nMask primers used for amplification\nDerive consensus\nDetermine Variants\n\nNow some hands on data analysis, So lets do some analysis !!"
+  },
+  {
+    "objectID": "Viral_Genomics.html#data",
+    "href": "Viral_Genomics.html#data",
+    "title": "Viral Phylogenomics",
+    "section": "Data",
+    "text": "Data\nFor the element of the workshop we have used Viral re-sequencing data generated using the ARTIC-V3 protocol from the COVID-19 Data Portal - EMBL. The following illumia paired end data was downloaded:\nSRR13018901_1.fastq.gz  SRR13635734_2.fastq.gz  SRR15359995_1.fastq.gz  SRR15360031_2.fastq.gz  SRR15910995_1.fastq.gz  SRR16192823_2.fastq.gz\nSRR13018901_2.fastq.gz  SRR13635763_1.fastq.gz  SRR15359995_2.fastq.gz  SRR15365583_1.fastq.gz  SRR15910995_2.fastq.gz\nSRR13635734_1.fastq.gz  SRR13635763_2.fastq.gz  SRR15360031_1.fastq.gz  SRR15365583_2.fastq.gz  SRR16192823_1.fastq.gz\nNote: We are using ‘pair end data’ some there is 2 sequences for each sample representing the forward and reverse samples.\nReference Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1 complete genome sequence (fasta) and annotation (gff) was downloaded from NCBI nucleotide database (https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3). (>send to > Complete Record > file > (FASTA/GFF3))\nMN908947.3.fasta\nMN908947.3.gff"
+  },
+  {
+    "objectID": "Viral_Genomics.html#software",
+    "href": "Viral_Genomics.html#software",
+    "title": "Viral Phylogenomics",
+    "section": "Software",
+    "text": "Software\n\ncov2019 Artic Nextflow Workflow\nPrimary analysis work flow was performed using cov2019-artic-nf pipeline. This analysis was performed using a High Performance Linux (Ubuntu 20.04) Workstation (24 threads and 64 Gb RAM) running nexflow (https://www.nextflow.io/) and singularity (https://github.com/sylabs/singularity). command used to perform the analysis:\nnextflow run connor-lab/ncov2019-artic-nf \\ #analsyis pipline\n        -profile singularity \\              #platform for software\n        --illumina \\                        #data type\n        --outdir $PWD/artic_analysis \\      #output folder\n        --prefix \"artic_test_run_221022\" \\  #output prefix\n        --directory $PWD/fastq_files/       #location of input files\n        --bed ~/covid_processing/artic_config_files/artic_V3.bed \\     #primer sequences in bed format\n        --ref ~/covid_processing/nimagen_conf_files/MN908947.3.fasta \\ #template sequence \n        --gff ~/covid_processing/nimagen_conf_files/MN908947.3.gff \\   #template annotation\n        --yaml ~/covid_processing/nimagen_conf_files/SARS-CoV-2.types.yaml #covid classification file\nYOU WILL NOT BE ABLE TO PERFORM THIS ANALYSIS, YOU WILL BE PROVIDED WITH THE OUTPUT OF THE PIPELINE WHICH CONTAINS THE FOLLOWING FOLDERS.\nartic_analysis/\n├── artic_test_run_221022.qc.csv\n├── artic_test_run_221022.typing_summary.csv\n├── artic_test_run_221022.variant_summary.csv\n├── ncovIllumina_Genotyping_typeVariants\n├── ncovIllumina_sequenceAnalysis_callVariants\n├── ncovIllumina_sequenceAnalysis_makeConsensus\n├── ncovIllumina_sequenceAnalysis_readMapping\n├── ncovIllumina_sequenceAnalysis_readTrimming\n├── ncovIllumina_sequenceAnalysis_trimPrimerSequences\n├── qc_pass_climb_upload\n└── qc_plots\n\n\nGenome Visualisation Software - IGB\nWe will visualize the primary outputs using Integrated Genome Browser this can be downloaded and install on all platforms. It is also available as part of the BIOSI School software tools on the teaching workstation."
+  },
+  {
+    "objectID": "Viral_Genomics.html#workshop-exercise",
+    "href": "Viral_Genomics.html#workshop-exercise",
+    "title": "Viral Phylogenomics",
+    "section": "Workshop exercise",
+    "text": "Workshop exercise\n\n1. Review the QC summary and QC Plot\nQC summary (this can be opened by opening artic_test_run_221022.qc.csv into excel)\n\n\n\n\n\n\n\n\n\n\n\n\n\nsample_name\npct_N_bases\npct_covered_bases\nlongest_no_N_run\nnum_aligned_reads\nfasta\nbam\nqc_pass\n\n\n\n\nSRR13018901\n18.63\n81.37\n3133\n492459\nSRR13018901.primertrimmed.consensus.fa\nSRR13018901.mapped.primertrimmed.sorted.bam\nTRUE\n\n\n\nNow review the linked QC plot that can be found in _analysis_plots\n Derive what the QC parameters are that would influence viral analsyis\n\n\n2. Review and Overlay the reference genome (FASTA), annotation (GFF) and primer trimmed alignment file (bam)\nPreview the fasta file and gff file using a text editor (wordpad / textpad on PC or Textedit on Mac). You cannot preview the bam file as it is a compressed binary file and is not human readable.\nfile locations:\nOmics revolution course - Viral Genomics\\Reference_files\\MN908947.3.fasta\nOmics revolution course - Viral Genomics\\Reference_files\\MN908947.3.gff\nOmics revolution course - Viral\\ Genomics\\artic_analysis\\ncovIllumina_sequenceAnalysis_trimPrimerSequences\\SRR13018901.mapped.primertrimmed.sorted.bam\nFasta Preview (fasta format guide)\n>MN908947.3 Severe acute respiratory syndrome coronavirus 2 isolate Wuhan-Hu-1, complete genome\nATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAA\nCGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAAC\nTAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTG\n.....\nGFF preview (GFF3 format guide)\n##gff-version 3\n##sequence-region   MN908947.3 1 29903\n#!genome-build ENA ASM985889v3\n#!genome-version ASM985889v3\n#!genome-date 2020-01\n#!genome-build-accession NCBI:GCA_009858895.3\nMN908947.3      ASM985889v3     region  1       29903   .       .       .       ID=region:MN908947.3;Alias=NC_045512.2,NC_045512v2\n####\nMN908947.3      ensembl gene    266     13483   .       +       .       ID=gene:ENSSASG00005000003;Name=ORF1ab;biotype=protein_coding;description=ORF1a polyprotein%3BORF1ab polyprotein [Source:NCBI gene (formerly Entrezgene)%3BAcc:43740578];gene_id=ENSSASG00005000003;logic_name=ensembl_covid;version=1\nMN908947.3      ensembl mRNA    266     13483   .       +       .       ID=transcript:ENSSAST00005000003;Parent=gene:ENSSASG00005000003;Name=ORF1a;biotype=protein_coding;transcript_id=ENSSAST00005000003;version=1\nMN908947.3      ensembl exon    266     13483   .       +       .       Parent=transcript:ENSSAST00005000003;Name=ENSSASE00005000003;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=ENSSASE00005000003;rank=1;version=1\n....\nNow overlay these features using Integrated Genome Browser using the following steps:\n\nOpen IGB\n\n * Open the fasta sequence as a genome\n Remember to ’Load Genome when are back on main screen\n\n\n\nLoad Sequence\n\n\n\nAdd and load gff\n\nopen gff > File > Open File > [Select gff from file browser]\nLoad data\n You should now see a preview of the annotated genome looking something like this:\n\n\n\nLoad gff\n\n\n\nAdd mapped primertrimmed sorted bam\n\nFile location:\nOmics revolution course - Viral\\ Genomics\\artic_analysis\\ncovIllumina_sequenceAnalysis_trimPrimerSequences\\SRR13018901.mapped.primertrimmed.sorted.bam\nopen bam > File > Open File > [Select bam from file browser]\nNow load data as you did previously.\nYou should now see a preview of the annotated genome with bam overlay looking something like this (it may take time to appear):\n\n\n\nLoad gff\n\n\nuse slider and top to zoom in to see the primer masking and SNPs:\n\n\n\nLoad BAM\n\n\n\nExplore settings on IGB to visualize the primer sites and mutations - identify synonymous and non-synonymous mutations\n\n\n\nExplore the Varient amino acids encoded by the sequence (this file can be opened in Excel)\nOmics revolution course - Viral Genomics\\artic_analysis\\artic_test_run_221022.variant_summary.csv\n\n\n\nsampleID\ngene\naa_var\ndna_var\n\n\n\n\nSRR13018901\nORF1ab\nSyn.924F\nC3037T\n\n\nSRR13018901\nORF1ab\nSyn.1749N\nC5512T\n\n\nSRR13018901\nS\nSyn.53D\nC21721T"
+  },
+  {
+    "objectID": "Viral_Genomics.html#data-1",
+    "href": "Viral_Genomics.html#data-1",
+    "title": "Viral Phylogenomics",
+    "section": "Data",
+    "text": "Data\nData was download from GISAID representing viral sequences from across (time and space) of the pandemic.\nThese sequences can be found in: Omics revolution course - Viral Genomics\\Viral_sequences\\SARAS-CoV-2\nEPI_ISL_14569384.fasta\nEPI_ISL_14871243.fasta\nEPI_ISL_15038461.fasta\nEPI_ISL_15165123.fasta\nEPI_ISL_15196344.fasta\nEPI_ISL_15233297.fasta\nEPI_ISL_15251359.fasta\nEPI_ISL_15266729.fasta\nEPI_ISL_15266749.fasta\nEPI_ISL_15283205.fasta\nEPI_ISL_15395946.fasta\nEPI_ISL_15400456.fasta\nEPI_ISL_15422334.fasta\nEPI_ISL_15424763.fasta\nEPI_ISL_15426260.fasta\nEPI_ISL_15436037.fasta\nEPI_ISL_15458335.fasta\nEPI_ISL_15463432.fasta\nEPI_ISL_15466700.fasta\nEPI_ISL_402128.fasta\nEPI_ISL_529216.fasta"
+  },
+  {
+    "objectID": "Viral_Genomics.html#software-1",
+    "href": "Viral_Genomics.html#software-1",
+    "title": "Viral Phylogenomics",
+    "section": "Software",
+    "text": "Software\nNextclade is a tool that identifies differences between your sequences and a reference sequence, uses these differences to assign your sequences to clades, and reports potential sequence quality issues in your data. You can use the tool to analyze sequences before you upload them to a database, or if you want to assign Nextstrain clades to a set of sequences.\nTo analyze your data, drag a fasta file onto the upload box or paste sequences into the text box. These sequences will then be analyzed in your browser - data never leave your computer. Since your computer is doing the work rather than a server, it is advisable to analyze at most a few hundred sequences at a time.\nThe source code for the application and algorithms is opensource and is available on GitHub. User manual is available at docs.nextstrain.org/projects/nextclade.\nNextclade\n\n\n\nNextflow Opening page"
+  },
+  {
+    "objectID": "Viral_Genomics.html#workshop-exercise-1",
+    "href": "Viral_Genomics.html#workshop-exercise-1",
+    "title": "Viral Phylogenomics",
+    "section": "Workshop exercise",
+    "text": "Workshop exercise\n\n\nLoad run sequence analysis\n\n\n\n\n\nDrag in fasta\n\n\n\n\n\nNexclade run\n\n\n\n\nReview the Results\n\n\n\n\n\nNexclade results\n\n\nClick / hover over the element of the analysis to see more detail\n  \n * 3. Review the position fall on the phylogenetic tree\nClick on the tree icon at the top right of the screen\n\n\n\nNexclade tree\n\n\n\n\nDownload and review results\n\n\nClick on the download icon at the top right of the screen\n I suggest using nextclade.tsv and opening file in excel.\n\n\nNow repeat the analysis with other sequences provided\n\n\nCan you determine where and when each sequence was derived from ?"
+  },
+  {
+    "objectID": "Viral_Genomics.html#data-2",
+    "href": "Viral_Genomics.html#data-2",
+    "title": "Viral Phylogenomics",
+    "section": "Data",
+    "text": "Data\nData was download from GISAID representing viral sequences from across (time and space) of the pandemic.\nThese sequences can be found in: Omics revolution course - Viral Genomics\\Viral_sequences\\SARAS-CoV-2"
+  },
+  {
+    "objectID": "Viral_Genomics.html#software-2",
+    "href": "Viral_Genomics.html#software-2",
+    "title": "Viral Phylogenomics",
+    "section": "Software",
+    "text": "Software\nGISAID Covsurver\n\n\n\nCoVsurver Open"
+  },
+  {
+    "objectID": "Viral_Genomics.html#workshop-exercise-2",
+    "href": "Viral_Genomics.html#workshop-exercise-2",
+    "title": "Viral Phylogenomics",
+    "section": "Workshop exercise",
+    "text": "Workshop exercise\n\n\nUpload and analysis sequences provide\n\n\nYou should see the following outputs - discuss how this help in fighting the pandemic ?\n \nCovsurver_varients"
+  },
+  {
+    "objectID": "Viral_Genomics.html#sequencing-approaches",
+    "href": "Viral_Genomics.html#sequencing-approaches",
+    "title": "Viral Phylogenomics",
+    "section": "Sequencing approaches",
+    "text": "Sequencing approaches\n\nArtic Network"
+  },
+  {
+    "objectID": "Viral_Genomics.html#analytical-tools",
+    "href": "Viral_Genomics.html#analytical-tools",
+    "title": "Viral Phylogenomics",
+    "section": "Analytical tools",
+    "text": "Analytical tools\n\nNextclade\nGISAID Covsurver"
+  },
+  {
+    "objectID": "Viral_Genomics.html#data-portals",
+    "href": "Viral_Genomics.html#data-portals",
+    "title": "Viral Phylogenomics",
+    "section": "Data portals",
+    "text": "Data portals\n\nCOVID-19 Data Portal - EMBL\nNCBI Viral Dash board\nGISAID\nNextStrain"
+  },
+  {
+    "objectID": "Viral_Genomics.html#lineage-comparison-data-bases",
+    "href": "Viral_Genomics.html#lineage-comparison-data-bases",
+    "title": "Viral Phylogenomics",
+    "section": "Lineage comparison Data bases",
+    "text": "Lineage comparison Data bases\n\nOutbreak"
+  }
+]
